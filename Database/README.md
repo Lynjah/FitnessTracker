@@ -4,6 +4,10 @@
 
 ![Physical Database Design](ProjectStep6.JPG)
 
+This is the underlining database design for the Fitness Tracker Application.
+The Fitness Tracker Application(FTA) will store a Users workouts, bmi and all associated records.
+These records include blah blah.
+These records are srtored in different tables(list tables) 
 ## Database Implementation (SQL Script)
 
 ## Drop and Create Database
