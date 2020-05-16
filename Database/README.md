@@ -2,7 +2,7 @@
 
 ## Physical Database Design
 
-![Physical Database Design](/images/logo.png)
+![Physical Database Design](ProjectStep6.JPG)
 
 
 # This is an <h1> tag
