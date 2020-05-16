@@ -11,7 +11,7 @@ These records are srtored in different tables(list tables)
 ## Database Implementation (SQL Script)
 
 ## Drop and Create Database
-```
+```sql
 USE master
 
 -- Drop Database
@@ -32,7 +32,7 @@ GO
 ```
 
 ## Create Database Tables
-```
+```sql
 -- Create Tables
 CREATE TABLE App.Users
 (userid          INT          NOT NULL IDENTITY(1,1),  
@@ -69,7 +69,7 @@ CREATE TABLE App.Bmi
 ```
 
 ## Populate Database Tables
-```
+```sql
 -- Populate table App.Users
 INSERT INTO App.Users(email, name, password)
     VALUES( N'person1@abc.com', N'Sara', N'password');
