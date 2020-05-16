@@ -72,7 +72,7 @@ INSERT INTO App.Users(email, name, password)
 INSERT INTO App.Users(email, name, password)  
 VALUES( N'person2@abc.com', N'Travis', N'password');
 
-select *
+SELECT *
 FROM App.Users;
 
 -- Populate table App.Exercises
@@ -89,7 +89,7 @@ VALUES( 2, N'Squats', '2020-01-01', 60, 205);
 INSERT INTO App.Exercises(userid, name, date, reps, repweight)  
 VALUES( 2, N'Benchpress', '2020-01-06', 30, 185);
 
-select *
+SELECT *
 FROM App.Exercises;
 
 -- Populate table App.Bmi
@@ -101,4 +101,7 @@ INSERT INTO App.Bmi(userid, date, weight, height, score)
 VALUES( 1, '2020-01-20', 155, 62, NULL);
 INSERT INTO App.Bmi(userid, date, weight, height, score)  
 VALUES( 2, '2020-01-22', 190, 72, NULL);
+
+SELECT *
+FROM App.Bmi;
 ```
