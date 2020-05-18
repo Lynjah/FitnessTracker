@@ -2,12 +2,12 @@
 
 ## Physical Database Design
 
-![Physical Database Design](ProjectStep6.JPG)
+![Physical Database Design](Database.JPG)
 
 This is the underlining database design for the Fitness Tracker Application.
 The Fitness Tracker Application(FTA) will store a User's workouts, BMI scores and associated records
 These records include height, weight, names and dates of exercises completed.
-These records are stored in different tables(App.Exercises and App.BMI).
+These records are stored in different tables(Users, Exercises and BMI).
 ## Database Implementation (SQL Script)
 
 ## Drop and Create Database
@@ -30,9 +30,9 @@ GO
 CREATE SCHEMA App AUTHORIZATION dbo;
 GO
 ```
-If a database with the name "Fitness" already exists then it will be removed before created a new "Fitness" database. The Schema "App" is created which will hold the first databases of the FTA.
+If a database with the name "Fitness" already exists then it will be removed before creating a new "Fitness" database. The Schema "App" is created which will hold the first databases of the FTA.
 
-## Create Database Tables
+## User Table
 ```sql
 -- Create Tables
 CREATE TABLE App.Users
@@ -43,7 +43,11 @@ CREATE TABLE App.Users
  
  CONSTRAINT PK_Users PRIMARY KEY(userid)
 );
+```
+This table is used to store User information to include their email, password, name and auto generated ID.
 
+## Exercise Table
+```sql
 CREATE TABLE App.Exercises
 (exid            INT          NOT NULL IDENTITY(1,1),
  userid          INT          NOT NULL,  
@@ -56,7 +60,11 @@ CREATE TABLE App.Exercises
  CONSTRAINT FK_Exercises FOREIGN KEY(userid)    
     REFERENCES App.Users(userid)
 );
+```
+This table is used to store Exercise information to include the foreign key userid, exercise name, date of exercise, reps, rep weight and auto generated ID.
 
+## BMI Table
+```sql
 CREATE TABLE App.Bmi
 (userid            INT          NOT NULL,  
  date              Date         NOT NULL,  
@@ -68,6 +76,7 @@ CREATE TABLE App.Bmi
     REFERENCES App.Users(userid)
 );
 ```
+This table is used to store BMI information to include the foreign key userid, date of BMI measurement, weight, height and score.
 
 ## Populate Database Tables
 ```sql
@@ -110,3 +119,4 @@ VALUES( 2, '2020-01-22', 190, 72, NULL);
 SELECT *
 FROM App.Bmi;
 ```
+Testing to ensure the tables work correctly. 
